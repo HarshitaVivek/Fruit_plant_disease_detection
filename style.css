@@ -8,7 +8,7 @@
 html,body{
     width: 95%;
     margin: 50px auto;
-    background: rgb(158, 209, 179);
+    background: rgb(158, 181, 209);
 }
 
 @media (min-width: 768px){
@@ -23,7 +23,7 @@ h1 {
 }
 
 h1 span{
-    color: limegreen;
+    color: rgb(205, 50, 182);
 }
 
 hr{
@@ -31,7 +31,7 @@ hr{
 }
 
 .github-fork-ribbon:before{
-    background: limegreen !important;
+    background: rgb(44, 142, 101) !important;
 }
 
 
@@ -66,14 +66,14 @@ hr{
 }
 .success-1, .success-2{
     display:none;
-    color: limegreen;
+    color: rgb(205, 50, 117);
 }
 .success-1 i, .success-2 i{
     font-size: 18px !important;
     margin-left:6px;
     margin-top:4px;
-    color: limegreen;
-    border: 1px solid limegreen;
+    color: rgb(205, 50, 94);
+    border: 1px solid rgb(205, 50, 130);
     padding: 5px;
     border-radius: 50%;
 }
@@ -89,7 +89,7 @@ hr{
 .upload-btn{
     display:block;
     font-size: 18px;
-    color: limegreen;
+    color: rgb(205, 50, 97);
 }
 
 .upload-btn i{
@@ -120,7 +120,7 @@ img{
 }
 
 .box-result p{
-    background: limegreen;
+    background: rgb(205, 50, 128);
     color: #fff;
     font-weight: bold;
     padding: 10px;
@@ -153,7 +153,7 @@ justify-content: center;
 
 .progress > .inner {
 position: absolute;
-color: limegreen; 
+color: rgb(205, 50, 146); 
 border: 1px solid #9b9b9b;
 }
 
@@ -163,7 +163,7 @@ display: block;
 }
 
 .init_status{
-    background: limegreen;
+    background: rgb(205, 50, 94);
     color: white;
     padding: 10px;
     border-radius: 10px;
@@ -185,7 +185,7 @@ display: block;
 }
 
 path {
-    stroke: limegreen;
+    stroke: rgb(205, 50, 146);
     stroke-width: 10;
     fill-opacity: 0.2;
 }

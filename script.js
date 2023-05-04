@@ -5,7 +5,6 @@ let img = document.getElementById('image')
 let boxResult = document.querySelector('.box-result')
 let confidence = document.querySelector('.confidence')
 let pconf = document.querySelector('.box-result p')
-
         
         let progressBar = 
             new ProgressBar.Circle('#progress', {
@@ -28,14 +27,17 @@ let pconf = document.querySelector('.box-result p')
 
         // Initialize/Load model
         async function initialize() {
+            console.log('called init');
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
-            model = await tf.loadLayersModel('./"C:\Users\HP\Documents\GitHub\Fruit_plant_disease_detection\model.json"');
+            model = await tf.loadLayersModel('C:/Users/HP/Documents/GitHub/Fruit_plant_disease_detection/model.json');
+            console.log(model);
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }
 
         async function predict() {
             // Function for invoking prediction
+            console.log('called predict');
             let img = document.getElementById('image')
             let offset = tf.scalar(255)
             let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([224,224]).toFloat().expandDims();
@@ -67,8 +69,8 @@ let pconf = document.querySelector('.box-result p')
         
 
         fileUpload.addEventListener('change', function(e){
-            
             let uploadedImage = e.target.value
+            console.log(uploadedImage);
             if (uploadedImage){
                 document.getElementById("blankFile-1").innerHTML = uploadedImage.replace("C:\\fakepath\\","")
                 document.getElementById("choose-text-1").innerText = "Change Selected Image"

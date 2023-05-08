@@ -14,7 +14,7 @@
     <h1>Orchard Guard 🍀</h1>
     <p>"Safeguarding Your Orchard: Early Detection of Fruit Plant Diseases Online."</p>
     <hr>
-<input type='C:/Users/HP/Documents/GitHub/Fruit_plant_disease_detection/model.json'>
+
 
     <div class="upload-btn-wrapper">
         <button class="btn upload-file font-weight-500">
@@ -89,10 +89,23 @@ let pconf = document.querySelector('.box-result p')
 
         // Initialize/Load model
         async function initialize() {
+
+            // fetch('http://127.0.0.1:8080/model.json')
+            //     .then(response => response.json())
+            //     .then(modelData => tf.loadLayersModel(tf.io.fromJSON(JSON.stringify(modelData))))
+            //     .then(model => {
+            //         console.log('model loaded');
+            //     })
+            //     .catch(error => {
+            //         console.log('not fetched', error);
+            //     })
+
             console.log('called init');
+
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
-            model = await tf.loadLayersModel('C:/Users/HP/Documents/GitHub/Fruit_plant_disease_detection/model.json');
+            console.log('reading');
+            model = await tf.loadLayersModel('http://127.0.0.1:8080/model.json');
             console.log(model);
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }

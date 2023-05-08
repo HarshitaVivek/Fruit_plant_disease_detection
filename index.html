@@ -77,7 +77,7 @@ let pconf = document.querySelector('.box-result p')
         });
 
         async function fetchData(){
-            let response = await fetch('./kaggle.json');
+            let response = await fetch('./class_indices.json');
             let data = await response.json();
             data = JSON.stringify(data);
             data = JSON.parse(data);
@@ -121,20 +121,20 @@ let pconf = document.querySelector('.box-result p')
            
             fetchData().then((data)=> 
                 {
-                    predicted_class = tf.argMax(prediction)
+                    predicted_class = tf.argMax(predictions)
                     
                     class_idx = Array.from(predicted_class.dataSync())[0]
                     document.querySelector('.pred_class').innerHTML = data[class_idx]
                     document.querySelector('.inner').innerHTML = `${parseFloat(prediction[class_idx]*100).toFixed(2)}% SURE`
                     console.log(data)
                     console.log(data[class_idx])
-                    console.log(prediction)
+                    console.log(predictions)
 
-                    progressBar.animate(prediction[class_idx]-0.005); // percent
+                    progressBar.animate(predictions[class_idx]-0.005); // percent
 
                     pconf.style.display = 'block'
 
-                    confidence.innerHTML = Math.round(prediction[class_idx]*100)
+                    confidence.innerHTML = Math.round(predictions[class_idx]*100)
   
                 }
             );

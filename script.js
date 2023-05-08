@@ -15,7 +15,7 @@ let pconf = document.querySelector('.box-result p')
         });
 
         async function fetchData(){
-            let response = await fetch('./C:\Users\HP\Documents\GitHub\Fruit_plant_disease_detection\class_indices.json');
+            let response = await fetch('./class_indices.json');
             let data = await response.json();
             data = JSON.stringify(data);
             data = JSON.parse(data);
@@ -30,7 +30,7 @@ let pconf = document.querySelector('.box-result p')
             console.log('called init');
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
-            model = await tf.loadLayersModel('./C:\Users\HP\Documents\GitHub\Fruit_plant_disease_detection\model.json');
+            model = await tf.loadLayersModel('./model.json');
             console.log(model);
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }
